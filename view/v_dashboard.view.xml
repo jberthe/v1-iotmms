@@ -1,0 +1,31 @@
+<core:View xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.suite.ui.commons"
+	controllerName="ch.saphirnet.view.c_dashboard" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<GenericTile 
+    header="Cumulative Totals"
+    subheader="Expenses"
+    size="S" 
+    frameType="OneByOne"
+    press="press">
+    <tileContent>
+      <TileContent footer="Current" unit="°C" size="S">
+        <content>
+          <BulletChart size="S" scale="M" targetValue="19" targetValueLabel="19°" minValue="10" maxValue="30">
+            <actual>
+              <BulletChartData value="20" color="Good"/>
+            </actual>
+            <thresholds>
+              <BulletChartData value="19" color="Critical"/>
+              <BulletChartData value="21" color="Good"/>              
+              <BulletChartData value="25" color="Critical"/>
+            </thresholds>
+          </BulletChart> 
+        </content>
+      </TileContent>
+    </tileContent>
+
+    </GenericTile>
+
+</core:View>
