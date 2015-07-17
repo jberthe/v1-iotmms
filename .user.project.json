@@ -1,0 +1,34 @@
+{
+  "run": [
+    {
+      "filePath": "/IoT/index.html",
+      "previewMode": 0,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "_metadata": {
+        "id": 5934225,
+        "runnerId": "webapprunner",
+        "displayName": "New Web Application",
+        "hasIssues": true
+      }
+    },
+    {
+      "filePath": "/IoT/Component.js",
+      "previewMode": 0,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "_metadata": {
+        "id": 8588653,
+        "runnerId": "fiorirunner",
+        "displayName": "New SAP Fiori Component on Sandbox",
+        "hasIssues": true
+      }
+    }
+  ]
+}
