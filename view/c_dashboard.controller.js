@@ -5,9 +5,30 @@ sap.ui.controller("ch.saphirnet.view.c_dashboard", {
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf ch.saphirnet.view.v_dashboard
 */
-//	onInit: function() {
-//
-//	},
+	onInit: function() {
+        sap.ui.core.UIComponent.getRouterFor(this).attachRouteMatched(this.onRouteMatched, this);
+	},
+
+    onRouteMatched : function(oEvent) {
+        var oParameters = oEvent.getParameters();
+        //var oView = this.getView();
+        
+        // when detail navigation occurs, update the binding context
+		if (oParameters.name !== "temperature") { 
+			return;
+		}
+		
+	    var app = oEvent.getParameter( 'targetControl' );
+		var viewId = oEvent.getParameter( 'view' ).getId();
+		app.to( viewId );
+		
+	/*	var sDevicePath = "/" + oParameters.arguments.deviceID;
+		this.bindView(sDevicePath);
+		
+		// Which tab?
+		var sTabKey = oParameters.arguments.tab;
+        this.getEventBus().publish("temperature", "TabChanged", { sTabKey : sTabKey });*/
+    },
 
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
@@ -34,5 +55,19 @@ sap.ui.controller("ch.saphirnet.view.c_dashboard", {
 //	onExit: function() {
 //
 //	}
+
+    onPress: function(oEvent) {
+        sap.m.MessageToast.show("The generic tile is pressed." + oEvent );
+       /*var bReplace = jQuery.device.is.phone ? false : true;
+		sap.ui.core.UIComponent.getRouterFor(this).navTo("temperature", {
+			from: "main",
+			deviceID: "4",
+			tab: "temperature"
+		}, bReplace);*/
+		var router = sap.ui.core.UIComponent.getRouterFor( this );
+		router.navTo( 'temperature' );
+		
+
+    }
 
 });

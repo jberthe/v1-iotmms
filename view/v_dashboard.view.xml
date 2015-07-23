@@ -6,20 +6,20 @@
 	<GenericTile 
     header="Cumulative Totals"
     subheader="Expenses"
-    size="S" 
+    size="M" 
     frameType="OneByOne"
-    press="press">
+    press="onPress">
     <tileContent>
       <TileContent footer="Current" unit="°C" size="S">
         <content>
           <BulletChart size="S" scale="M" targetValue="19" targetValueLabel="19°" minValue="10" maxValue="30">
             <actual>
-              <BulletChartData value="20" color="Good"/>
+              <BulletChartData value="30" color="Critical"/>
             </actual>
             <thresholds>
               <BulletChartData value="19" color="Critical"/>
               <BulletChartData value="21" color="Good"/>              
-              <BulletChartData value="25" color="Critical"/>
+              <BulletChartData value="40" color="Critical"/>
             </thresholds>
           </BulletChart> 
         </content>

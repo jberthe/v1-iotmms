@@ -34,20 +34,22 @@ sap.ui.core.UIComponent.extend("ch.saphirnet.Component", {
 				{
 					pattern : "",
 					name : "main",
-					view : "v_dashboard"
+					view : "v_dashboard",
+					targetControl : "idAppControl"/*,
+					subroutes : [
+					    {
+					        pattern : "{deviceID}/:tab:",
+					        name : "temperature",
+					        view : "v_TemperatureGraph"
+					    }
+					]*/
 				},
 				{
-					name : "catchallMaster",
-					view : "Master",
-					targetAggregation : "masterPages",
-					targetControl : "idAppControl",
-					subroutes : [
-						{
-							pattern : ":all*:",
-							name : "catchallDetail",
-							view : "NotFound"
-						}
-					]
+				    pattern : "temp",
+					name : "temperature",
+					//viewPath: "ch.saphirnet.view",
+					view : "v_TemperatureGraph",
+					targetControl: "idAppControl"
 				}
 			]
         }
