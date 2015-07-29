@@ -1,10 +1,15 @@
 <core:View xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:viz="sap.viz.ui5.controls" 
 	xmlns="sap.m" controllerName="ch.saphirnet.view.c_TemperatureGraph" 
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Title">
 		<content>
-		
+    		<ScrollContainer height="100%" width="100%" horizontal="false" vertical="true" focusable="true">
+               <viz:Popover id="idPopOver"></viz:Popover>
+               <viz:VizFrame id="idVizFrameLine" uiConfig="{applicationSet:'fiori'}" vizType="line" width="100%" height="700px">
+               </viz:VizFrame>
+            </ScrollContainer>
 		</content>
 	</Page>
 </core:View>

@@ -42,6 +42,34 @@ sap.ui.controller("ch.saphirnet.view.c_TemperatureGraph", {
 				}
 			}
 		}, this);
+		
+		// Charge le model pour la température
+		this.loadModel();
+
+	},
+	
+	loadModel: function(){
+	    var oVizFrame = this.getView().byId("idVizFrameLine");
+        var oPopOver = this.getView().byId("idPopOver");
+        
+        var oModel = sap.ui.getCore();
+        
+        
+        var oDataset = new sap.viz.ui5.data.FlattenedDataset({
+          dimensions: [{
+            name: 'Date',
+            value: "{G_CREATED}"
+          }, {
+            name: 'Temperature',
+            value: "{C_TEMPERATURE}"
+          }],
+          data: {
+            path: "/d/results"
+          }
+        });
+
+
+        oVizFrame.setModel(oModel);
 
 	}
 
